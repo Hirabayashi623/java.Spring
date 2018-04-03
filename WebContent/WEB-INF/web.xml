@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+							http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5"
+	metadata-complete="true">
+
+	<display-name>Spring</display-name>
+
+	<servlet>
+		<servlet-name>SAMPLE01</servlet-name>
+		<servlet-class>sample01.SampleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMPLE01</servlet-name>
+		<url-pattern>/SAMPLE01</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SAMPLE02</servlet-name>
+		<servlet-class>sample02.SampleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMPLE02</servlet-name>
+		<url-pattern>/SAMPLE02</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SAMPLE03</servlet-name>
+		<servlet-class>sample03.SampleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMPLE03</servlet-name>
+		<url-pattern>/SAMPLE03</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SAMPLE04</servlet-name>
+		<servlet-class>sample04.SampleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMPLE04</servlet-name>
+		<url-pattern>/SAMPLE04</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>controller</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controller</servlet-name>
+		<url-pattern>*.spg</url-pattern>
+	</servlet-mapping>
+
+	<!-- 	#############################################
+			###		Strutsとの連携
+			################################################## -->
+	<servlet>
+    <servlet-name>StrutsAction</servlet-name>
+    <servlet-class>common.struts.BaseActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StrutsAction</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+	<!--	############################################
+			###	JDBCを使ったデータベースアクセス
+			############################################ -->
+  	<servlet>
+		<servlet-name>SAMPLE07</servlet-name>
+		<servlet-class>sample07.SampleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SAMPLE07</servlet-name>
+		<url-pattern>/SAMPLE07</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

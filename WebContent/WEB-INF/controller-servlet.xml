@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+	"-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean name="/SampleController.spg"
+			class="sample05.SampleController">
+		<property name="bean">
+			<ref bean="sample05.bean" />
+		</property>
+	</bean>
+	<bean id="sample05.bean" class="sample05.SampleBean"/>
+</beans>

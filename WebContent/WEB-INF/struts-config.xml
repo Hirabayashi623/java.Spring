@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Fundation//DTD Struts Configuration 1.3//EN"
+	"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="form06" type="sample06.SampleForm" />
+	</form-beans>
+
+	<action-mappings>
+		<action path="/action06"
+					type="org.springframework.web.struts.DelegatingActionProxy"
+					name="form06"
+					scope="request">
+			<forward name="result" path="/html/sample06/result.jsp" />
+		</action>
+	</action-mappings>
+
+	<plug-in className="org.springframework.web.struts.ContextLoderPlugIn">
+		<set-property property="contentConfigLocation"
+							value="/WEB-INF/classes/struts-bean.xml" />
+	</plug-in>
+</struts-config>

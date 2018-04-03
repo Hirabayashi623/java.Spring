@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+	"-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="sample01.test" class="sample01.SampleBean" />
+
+	<bean id="sample02.bean" class="sample02.SampleBean">
+		<property name="title">
+			<value>TITLE</value>
+		</property>
+		<property name="message">
+			<value>message.</value>
+		</property>
+	</bean>
+
+	<bean id="sample03.bean" class="sample03.SampleBean">
+		<property name="title">
+			<value>TITLE</value>
+		</property>
+		<property name="message">
+			<value>message.</value>
+		</property>
+	</bean>
+
+	<bean id="sample04.action" class="sample04.ActionBean">
+		<property name="title">
+			<value>TITLE04</value>
+		</property>
+		<property name="message">
+			<value>message04</value>
+		</property>
+	</bean>
+	<bean id="sample04.bean" class="sample04.SampleBean">
+		<property name="action">
+			<ref bean="sample04.action" />
+		</property>
+	</bean>
+
+	<!--	############################################
+			###	JDBCを使ったデータベースアクセス
+			############################################ -->
+	<bean id="sample07.bean" class="sample07.SampleBean">
+		<property name="datasource">
+			<ref local="sample07.datasource" />
+		</property>
+	</bean>
+	<bean id="sample07.datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:XE</value>
+		</property>
+		<property name="username">
+			<value>SAMPLE</value>
+		</property>
+		<property name="password">
+			<value>SAMPLE</value>
+		</property>
+	</bean>
+</beans>
